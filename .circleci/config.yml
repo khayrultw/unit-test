@@ -6,13 +6,14 @@ orbs:
 jobs:
   run-unit-test:
     executor:
-      name: android/android_docker
+      name: android/android_machine
       tag: default
     steps:
       - checkout
+      - android/save_gradle_cache
       - android/run_tests:
           test_command: ./gradlew testDebugUnitTest
-
+      - android/restore_gradle_cache
 workflows:
   build-and-test:
     jobs:
