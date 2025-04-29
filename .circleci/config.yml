@@ -10,7 +10,7 @@ jobs:
       tag: default
     steps:
       - checkout
-      - android/runt-tests:
+      - android/run-tests:
           test-command: ./gradlew testDebugUnitTest
 
 workflows:
