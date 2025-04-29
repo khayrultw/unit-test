@@ -10,10 +10,8 @@ jobs:
       tag: default
     steps:
       - checkout
-      - android/save_gradle_cache
       - android/run_tests:
           test_command: ./gradlew testDebugUnitTest
-      - android/restore_gradle_cache
 workflows:
   build-and-test:
     jobs:
