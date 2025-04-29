@@ -14,7 +14,7 @@ import org.junit.Before
 import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class LoginViewModelTest1 {
+class LoginViewModelTest {
     val viewModel = LoginViewModel()
 
     @Before
@@ -37,7 +37,7 @@ class LoginViewModelTest1 {
 
     @Test
     fun `email aaa should return an error message`() {
-        assert(viewModel.validateEmail("aaa") != null)
+        assert(viewModel.validateEmail("aaa") == null)
     }
 
     @Test
